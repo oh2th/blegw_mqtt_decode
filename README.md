@@ -75,4 +75,3 @@ The device was built to my own needs, and has only been tested in the northern h
 # Thanks
 - [@OH2MP](https://github.com/oh2mp/) for the ESP32 based BLE2MQTT project and dataformats
 - @AprilBrother for creating the BLE Gateway
--
