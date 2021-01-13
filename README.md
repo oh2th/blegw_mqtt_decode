@@ -11,6 +11,7 @@ This script sends the decoded data as JSON to the broker and the dataformat is c
 More to be supported eventually. Goal is to support the same as OH2MP ESP32 BLE2MQTT
 
 ## Hardware prerequisites
+![APR BLEGW4](s/gateway41.jpg)
 - [April Brother BLE Gateway 4.0](https://blog.aprbrother.com/product/ab-ble-gateway-4-0)
 - See also [April Brother Wiki](https://wiki.aprbrother.com/en/AB_BLE_Gateway_V4.html) for documentation
 - and their Github for [ab-ble-gateway-sdk](https://github.com/AprilBrother/ab-ble-gateway-sdk)
