@@ -55,6 +55,7 @@ sub handle_mqtt_message {
 		foreach ( @devices ) {
 			my ($ble_adv_type, $ble_mac, $ble_rssi, $ble_adv_data ) = @$_;
 			my ($tag_name, $tag_data);
+			$ble_rssi = abs($ble_rssi);
 
 			# Add ":" to address and lower case it and check for known_tags.
 			$ble_mac = lc(join(':', unpack('A2A2A2A2A2A2', $ble_mac)));
