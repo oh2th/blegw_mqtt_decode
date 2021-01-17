@@ -10,8 +10,8 @@ use JSON::PP qw(decode_json encode_json);
 
 GetOptions(
     "debug"		=> \my $debug,
-    "config=s"	=> \(my $config = "config.txt"),
-    "tags=s"		=> \(my $tags = "known_tags.txt"),
+    "config:s"	=> \(my $config = "config.txt"),
+    "tags:s"		=> \(my $tags = "known_tags.txt"),
 ) or die "Options missing $!";
 
 # Load known comfig from file
