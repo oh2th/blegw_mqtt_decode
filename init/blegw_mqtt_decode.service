@@ -1,13 +1,14 @@
 [Unit]
 Description=Decode AP BLE4 MQTT JSON messages to OH2MP Beacon messages
-After=network.target
+After=network.target mosquitto.service
+Wants=mosquitto.service
 StartLimitIntervalSec=0
 
 [Service]
 Type=simple
 Restart=always
 RestartSec=30
-ExecStart=/usr/bin/env /usr/local/bin/blegw_mqtt_decode.pl -configpath /etc/blegw_mqtt_decode
+ExecStart=/usr/bin/env /usr/local/bin/blegw_mqtt_decode.pl -config /etc/blegw_mqtt_decode/config.txt -tags /etc/blegw_mqtt_decode/known_tags.txt
 
 [Install]
 WantedBy=multi-user.target
