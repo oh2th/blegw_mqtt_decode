@@ -1,0 +1,13 @@
+[Unit]
+Description=Decode AP BLE4 MQTT JSON messages to OH2MP Beacon messages
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=30
+ExecStart=/usr/bin/env /usr/local/bin/blegw_mqtt_decode.pl -configpath /etc/blegw_mqtt_decode
+
+[Install]
+WantedBy=multi-user.target
