@@ -8,9 +8,6 @@ use Getopt::Long qw(GetOptions);
 use Net::MQTT::Simple;
 use JSON::PP qw(decode_json encode_json);
 
-# For debuging
-use Data::Dumper::Simple;
-
 GetOptions(
     "debug"             => \my $debug,
 ) or die "Options missing $!";
