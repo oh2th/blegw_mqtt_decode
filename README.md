@@ -18,7 +18,7 @@ More to be supported eventually. Goal is to support the same as OH2MP ESP32 BLE2
 
 ## Software prerequisites
 - Some MQTT broker like Mosquitto running somewhere.
-- Perl libraries Net::MQTT::Simple and JSON::Tiny
+- Perl libraries Net::MQTT::Simple and JSON::PP
 
 ## Configure the BLE GW
 - Get the latest firmware so that it supports JSON as plain text without msgpacking it.

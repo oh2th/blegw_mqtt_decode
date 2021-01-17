@@ -6,7 +6,7 @@ use Getopt::Long qw(GetOptions);
 
 # Install extra modules
 use Net::MQTT::Simple;
-use JSON::Tiny qw(decode_json encode_json);
+use JSON::PP qw(decode_json encode_json);
 
 # For debuging
 use Data::Dumper::Simple;
@@ -16,7 +16,7 @@ GetOptions(
 ) or die "Options missing $!";
 
 # Load known comfig from file
-open(INFILE, "<config.txt") or die "Could not open config.txt $!";
+open(INFILE, "<:encoding(UTF-8)", "config.txt") or die "Could not open config.txt $!";
 my %config;
 while (<INFILE>) {
 	chomp $_;
@@ -25,7 +25,7 @@ while (<INFILE>) {
 }
 
 # Load known tags from file
-open(INFILE, "<known_tags.txt") or die "Could not open known_tags.txt $!";
+open(INFILE, "<:encoding(UTF-8)", "known_tags.txt") or die "Could not open known_tags.txt $!";
 my %tags;
 while (<INFILE>) {
 	chomp $_;
