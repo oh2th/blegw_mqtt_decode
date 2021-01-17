@@ -10,12 +10,12 @@ use JSON::PP qw(decode_json encode_json);
 
 GetOptions(
     "debug"		=> \my $debug,
-    "config"	=> \(my $config = "config.txt"),
-    "tags"		=> \(my $tags = "known_tags.txt"),
+    "config=s"	=> \(my $config = "config.txt"),
+    "tags=s"		=> \(my $tags = "known_tags.txt"),
 ) or die "Options missing $!";
 
 # Load known comfig from file
-open(INFILE, "<:encoding(UTF-8)", $config ) or die "Could not open config.txt $!";
+open(INFILE, "<:encoding(UTF-8)", $config ) or die "Could not open ${config} $!";
 my %config;
 while (<INFILE>) {
 	chomp $_;
@@ -24,7 +24,7 @@ while (<INFILE>) {
 }
 
 # Load known tags from file
-open(INFILE, "<:encoding(UTF-8)", $tags) or die "Could not open known_tags.txt $!";
+open(INFILE, "<:encoding(UTF-8)", $tags) or die "Could not open ${tags} $!";
 my %tags;
 while (<INFILE>) {
 	chomp $_;
