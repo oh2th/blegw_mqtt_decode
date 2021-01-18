@@ -119,7 +119,7 @@ sub handle_mqtt_message {
 				}
 			}
 			my $pub_topic = $config{"pub_topic"} . "/" . $tag_name;
-			printf ("%s %s\n", $pub_topic, $tag_data);
+			printf ("%s %s\n", $pub_topic, $tag_data) if $debug;
 			$mqtt->publish($pub_topic => $tag_data);
 			#warn Dumper($_);
 		}
