@@ -1,5 +1,5 @@
-prefix = "/usr/local"
-systemctldir = "/etc/systemd/system/"
+prefix = /usr/local
+systemctldir = /etc/systemd/system/
 
 install: $(prefix)/bin/blegw_mqtt_decode.pl $(systemctldir)/blegw_mqtt_decode.service
 
