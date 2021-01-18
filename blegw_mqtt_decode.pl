@@ -1,7 +1,11 @@
 #!/usr/bin/perl -w -CSDA
 
-use strict;
 use utf8;
+use strict;
+use warnings;
+$SIG{HUP}  = \&signal_handler_hup;
+$SIG{INT}  = \&signal_handler_term;
+$SIG{TERM} = \&signal_handler_term;
 use Getopt::Long qw(GetOptions);
 
 # Install extra modules
@@ -124,4 +128,15 @@ sub handle_mqtt_message {
 			#warn Dumper($_);
 		}
 	}
+}
+
+sub signal_handler_hup {
+	$mqtt->disconnect();
+	print "HUP on signal $!\n" if $debug;
+}
+
+sub signal_handler_term {
+	$mqtt->disconnect();
+	print "Exit on signal $!\n" if $debug;
+	exit();
 }
